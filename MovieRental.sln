@@ -7,6 +7,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MovieRental.Database", "Mov
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADOLibrary", "ADOLibrary\ADOLibrary.csproj", "{D611ACA4-2164-4F61-8E9E-4A89C9A14752}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesRental.DAL", "MoviesRental.DAL\MoviesRental.DAL.csproj", "{944443F1-4897-451A-9072-2AD0F70D00BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{D611ACA4-2164-4F61-8E9E-4A89C9A14752}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D611ACA4-2164-4F61-8E9E-4A89C9A14752}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D611ACA4-2164-4F61-8E9E-4A89C9A14752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{944443F1-4897-451A-9072-2AD0F70D00BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{944443F1-4897-451A-9072-2AD0F70D00BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{944443F1-4897-451A-9072-2AD0F70D00BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{944443F1-4897-451A-9072-2AD0F70D00BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
