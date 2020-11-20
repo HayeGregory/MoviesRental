@@ -3,5 +3,5 @@
 	@Passwd VARCHAR(20)
 AS
 BEGIN
-	SELECT [CustomerId], [LastName], [FirstName], [Email] FROM [Customer] WHERE [Email] = @Email and PAsswd = HASHBYTES('SHA2_512', dbo.MVSF_GetPreHash() + @Passwd + dbo.MVSF_GetPostHash());
+	SELECT [CustomerId], [LastName], [FirstName], [Email] FROM [Customer] WHERE [Email] = @Email and Passwd = HASHBYTES('SHA2_512', dbo.MVSF_GetPreHash() + @Passwd + dbo.MVSF_GetPostHash());
 END
