@@ -12,7 +12,12 @@ namespace MoviesRental.DAL.Services
         public ActorService(Connection connection) : base(connection)
         {
         }
-
+        /*
+         * GET : 
+         * - Get all
+         * - Get all actors by Film id
+         * - Get all Initials of actors
+         */
         public override IEnumerable<Actor> GetAll()
         {
             Command cmd = new Command("GetAllActor", true);
@@ -23,9 +28,19 @@ namespace MoviesRental.DAL.Services
             Command cmd = new Command("GetAllActorByFilmId", true);
             cmd.AddParameter("IdFilm", key);
             return connection.ExecuteReader<Actor>(cmd, Converter);
-
         }
 
+        public IEnumerable<ActorInitials> GetAllInitials() {
+            Command cmd = new Command("GetAllActorInitials", true);
+            return connection.ExecuteReader<ActorInitials>(cmd, ConverterInitials);
+        }
+
+
+        /* 
+         * Converters :
+         * - Actor
+         * - ActorInitials
+         **/
         private Actor Converter(SqlDataReader reader)
         {
             return new Actor (
@@ -34,5 +49,15 @@ namespace MoviesRental.DAL.Services
                 reader["LastName"].ToString()
             );
         }
+
+        private ActorInitials ConverterInitials(SqlDataReader reader)
+        {
+            return new ActorInitials(
+                (int)reader["ActorId"],
+                Char.Parse(reader["InitialFirstName"].ToString()),
+                Char.Parse(reader["InitialLastName"].ToString())
+            );
+        }
+
     }
 }

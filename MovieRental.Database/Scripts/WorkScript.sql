@@ -36,10 +36,10 @@ WHERE FirstName = 'DAN' AND LastName = 'TORN'
 
 
 SELECT 
-	ActorId, A.FirstName, A.LastName,
-	left(FirstName, 1) as FirstName, 
-	left(LastName, 1) as LastName,
-	concat(left(FirstName, 1), left(LastName, 1)) as Initials
+	ActorId, 
+	left(FirstName, 1) as InitialFirstName, 
+	left(LastName, 1) as InitialLastName
+/*	concat(left(FirstName, 1), left(LastName, 1)) as Initials*/
 FROM Actor A
 WHERE FirstName = 'DAN' AND LastName = 'TORN'
 

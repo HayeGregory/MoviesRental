@@ -16,6 +16,13 @@ namespace MoviesRental.API.Controllers
             _service = service;
         }
 
+        /*
+         * Get :
+         * - Get all
+         * - Get all actor by film id
+         * - get all initials of actor
+         */
+
         [HttpGet]
         public IEnumerable<Actor> GetAll() {
             return _service.GetAll();
@@ -24,6 +31,13 @@ namespace MoviesRental.API.Controllers
         [HttpGet("{IdFilm}")]
         public IEnumerable<Actor> GetALLByFilmId(int IdFilm) {
             return _service.GetAllByFilmId(IdFilm);
+        }
+
+        [HttpGet]
+        [Route("Initials")]
+        public IEnumerable<ActorInitials> GetAllInitials()
+        {
+            return _service.GetAllInitials();
         }
     }
 }

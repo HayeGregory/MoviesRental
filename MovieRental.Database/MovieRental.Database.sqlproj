@@ -84,7 +84,7 @@
     <Build Include="Views\V_Film.sql" />
     <Build Include="Functions\DatabaseScalarInitialActor.sql" />
     <Build Include="Procedures\Actor\GetAllActor.sql" />
-    <Build Include="Procedures\Actor\GetAllActorByInitials.sql" />
+    <Build Include="Procedures\Actor\GetAllActorInitials.sql" />
     <Build Include="Procedures\Actor\GetAllActorByFilmId.sql" />
     <Build Include="Procedures\Category\GetAllCategory.sql" />
   </ItemGroup>
