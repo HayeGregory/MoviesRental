@@ -3,6 +3,7 @@ using MoviesRental.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Text;
 
 namespace MoviesRental.DAL.Services
@@ -44,16 +45,21 @@ namespace MoviesRental.DAL.Services
             return connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
         }
 
-        public IEnumerable<FilmShort> getAllFSByTitle(string title) {
+        public IEnumerable<FilmShort> GetAllFSByTitle(string title) {
             Command cmd = new Command("GetAllFSByTitle", true);
             cmd.AddParameter("Title", title);
             return connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
         }
-        public IEnumerable<FilmShort> getAllFSByLanguageId(int key)
+        public IEnumerable<FilmShort> GetAllFSByLanguageId(int key)
         {
             Command cmd = new Command("GetAllFSByLanguageId", true);
             cmd.AddParameter("LanguageId", key);
             return connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
+        }
+        public FilmFull GetFilmById(int key) {
+            Command cmd = new Command("GetFilmById", true);
+            cmd.AddParameter("Id", key);
+            return connection.ExecuteReader<FilmFull>(cmd, ConverterFull).FirstOrDefault();
         }
 
         /* 

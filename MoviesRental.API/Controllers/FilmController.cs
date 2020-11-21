@@ -55,13 +55,18 @@ namespace MoviesRental.API.Controllers
         [HttpGet("Title/{Title}")]
         public IEnumerable<FilmShort> GetAllFSByTitle(string Title)
         {
-            return _service.getAllFSByTitle(Title);
+            return _service.GetAllFSByTitle(Title);
         }
 
         [HttpGet("Langue/{LanguageId}")]
         public IEnumerable<FilmShort> GetAllFSByLanguageId(int LanguageId)
         {
-            return _service.getAllFSByLanguageId(LanguageId);
+            return _service.GetAllFSByLanguageId(LanguageId);
+        }
+
+        [HttpGet("{Id}")]
+        public FilmFull GetById(int Id) {
+            return _service.GetFilmById(Id);
         }
 
     }

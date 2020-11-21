@@ -123,3 +123,10 @@ exec [dbo].[GetAllFSByTitle('DIVINE')]
 	SELECT FilmId, Title, [Description], ReleaseYear, RentalPrice, [Length] 
 	FROM Film 
 	WHERE LanguageId = 1
+
+
+	select * from Rental
+	select * from RentalDetail
+
+
+		SELECT * from V_Film where FilmId = 4
