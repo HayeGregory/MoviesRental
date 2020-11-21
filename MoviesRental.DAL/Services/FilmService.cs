@@ -49,6 +49,12 @@ namespace MoviesRental.DAL.Services
             cmd.AddParameter("Title", title);
             return connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
         }
+        public IEnumerable<FilmShort> getAllFSByLanguageId(int key)
+        {
+            Command cmd = new Command("GetAllFSByLanguageId", true);
+            cmd.AddParameter("LanguageId", key);
+            return connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
+        }
 
         /* 
          * Converters :

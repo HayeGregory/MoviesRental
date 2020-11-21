@@ -58,5 +58,11 @@ namespace MoviesRental.API.Controllers
             return _service.getAllFSByTitle(Title);
         }
 
+        [HttpGet("Langue/{LanguageId}")]
+        public IEnumerable<FilmShort> GetAllFSByLanguageId(int LanguageId)
+        {
+            return _service.getAllFSByLanguageId(LanguageId);
+        }
+
     }
 }

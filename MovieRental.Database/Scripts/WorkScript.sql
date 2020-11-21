@@ -117,4 +117,9 @@ set @Titlee = 'DIVINE'
 	FROM Film 
 	WHERE Title like '%'+'DIVINE'+'%'
 
-exec [dbo].[GetAllFSByTitle]('DIVINE')
+exec [dbo].[GetAllFSByTitle('DIVINE')]
+
+
+	SELECT FilmId, Title, [Description], ReleaseYear, RentalPrice, [Length] 
+	FROM Film 
+	WHERE LanguageId = 1

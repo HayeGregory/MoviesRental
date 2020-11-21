@@ -88,6 +88,12 @@
     <Build Include="Procedures\Actor\GetAllActorByFilmId.sql" />
     <Build Include="Procedures\Category\GetAllCategory.sql" />
     <Build Include="Procedures\Actor\GetAllActorByInitials.sql" />
+    <Build Include="Procedures\Film\GetAllFilm.sql" />
+    <Build Include="Procedures\Film\GetAllFilmShort.sql" />
+    <Build Include="Procedures\Film\GetAllFilmFull.sql" />
+    <Build Include="Procedures\Film\GelAllFSByCategoryId.sql" />
+    <Build Include="Procedures\Film\GetAllFSByTitle.sql" />
+    <Build Include="Procedures\Film\GetAllFSByLanguageId.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MovieRental.Database.publish.xml" />

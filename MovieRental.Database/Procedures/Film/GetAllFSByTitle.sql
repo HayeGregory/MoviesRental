@@ -2,7 +2,7 @@
 	@Title NVARCHAR(255)
 AS
 BEGIN
-	SELECT FilmId, Title, [Description], ReleaseYear, RentalPrice, [Length] 
+	SELECT FilmId, Title, ReleaseYear
 	FROM Film 
 	WHERE Title like '%'+@Title+'%'
 END
