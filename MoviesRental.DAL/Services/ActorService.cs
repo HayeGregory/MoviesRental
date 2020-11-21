@@ -9,10 +9,13 @@ namespace MoviesRental.DAL.Services
 {
     public class ActorService : BaseService<int, Actor>
     {
+        public ActorService(Connection connection) : base(connection)
+        {
+        }
+
         public override IEnumerable<Actor> GetAll()
         {
             Command cmd = new Command("GetAllActor", true);
-
             return connection.ExecuteReader<Actor>(cmd, Converter);
         }
 
