@@ -19,6 +19,13 @@ namespace MoviesRental.DAL.Services
             return connection.ExecuteReader<Actor>(cmd, Converter);
         }
 
+        public IEnumerable<Actor> GetAllByFilmId(int key) {
+            Command cmd = new Command("GetAllActorByFilmId", true);
+            cmd.AddParameter("IdFilm", key);
+            return connection.ExecuteReader<Actor>(cmd, Converter);
+
+        }
+
         private Actor Converter(SqlDataReader reader)
         {
             return new Actor (

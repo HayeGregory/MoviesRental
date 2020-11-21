@@ -75,3 +75,21 @@ INSERT INTO RentalDetail (FilmId, RentalPrice) OUTPUT inserted.RentalId VALUES (
 
 SELECT RentalId as Id, * FROM Rental
 SELECT RentalId as Id, * FROm RentalDetail
+
+
+SELECT [FilmId]
+      ,[Title]
+      ,[Description]
+      ,[ReleaseYear]
+      ,[F].[LanguageId]
+	  ,[L].[Name]
+      ,[RentalDuration]
+      ,[RentalPrice]
+      ,[Length]
+      ,[ReplacementCost]
+	  ,[F].[RatingId]
+      ,[Rating]
+
+  FROM [Film] AS [F]
+  JOIN [Rating] AS [R] ON [F].[RatingId] = [R].[RatingId]
+  JOIN [Language] AS [L] ON [F].[LanguageId] = [L].[LanguageId]

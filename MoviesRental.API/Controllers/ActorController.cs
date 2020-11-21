@@ -20,5 +20,10 @@ namespace MoviesRental.API.Controllers
         public IEnumerable<Actor> GetAll() {
             return _service.GetAll();
         }
+
+        [HttpGet("{IdFilm}")]
+        public IEnumerable<Actor> GetALLByFilmId(int IdFilm) {
+            return _service.GetAllByFilmId(IdFilm);
+        }
     }
 }
