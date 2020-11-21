@@ -25,9 +25,14 @@ where 'DT' = concat(left(FirstName,1),left(LastName,1))
 select * from Category
 
 
-SELECT CONCAT(FirstName,' ', LastName) 
+SELECT ActorId, FirstName, LastName
 FROM Actor 
-WHERE SUBSTRING(FirstName, 1, 1) = 'D' AND SUBSTRING(LastName, 1, 1) = 'T'
+WHERE SUBSTRING(FirstName, 1, 1) = 'A' AND SUBSTRING(LastName, 1, 1) = 'B'
+
+	SELECT ActorId, FirstName, LastName
+	FROM Actor 
+	WHERE	left(FirstName, 1) = left('MM' , 1)
+	AND		left(LastName, 1) = right('MM', 1)
 
 
 SELECT SUBSTRING(FirstName, 1, 1) as FirstName, SUBSTRING(LastName, 1, 1) as LastName 
@@ -93,3 +98,6 @@ SELECT [FilmId]
   FROM [Film] AS [F]
   JOIN [Rating] AS [R] ON [F].[RatingId] = [R].[RatingId]
   JOIN [Language] AS [L] ON [F].[LanguageId] = [L].[LanguageId]
+
+
+exec [dbo].[GetAllActorByInitials('DT')]

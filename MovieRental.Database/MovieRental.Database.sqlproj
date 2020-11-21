@@ -87,6 +87,7 @@
     <Build Include="Procedures\Actor\GetAllActorInitials.sql" />
     <Build Include="Procedures\Actor\GetAllActorByFilmId.sql" />
     <Build Include="Procedures\Category\GetAllCategory.sql" />
+    <Build Include="Procedures\Actor\GetAllActorByInitials.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MovieRental.Database.publish.xml" />

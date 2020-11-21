@@ -17,6 +17,7 @@ namespace MoviesRental.DAL.Services
          * - Get all
          * - Get all actors by Film id
          * - Get all Initials of actors
+         * - Get all actors by initials
          */
         public override IEnumerable<Actor> GetAll()
         {
@@ -34,6 +35,15 @@ namespace MoviesRental.DAL.Services
             Command cmd = new Command("GetAllActorInitials", true);
             return connection.ExecuteReader<ActorInitials>(cmd, ConverterInitials);
         }
+
+        public IEnumerable<Actor> GetAllByInitials(string initials)
+        {
+            Command cmd = new Command("GetAllActorByInitials", true);
+            cmd.AddParameter("initials", initials);
+            return connection.ExecuteReader<Actor>(cmd, Converter);
+        }
+
+
 
 
         /* 

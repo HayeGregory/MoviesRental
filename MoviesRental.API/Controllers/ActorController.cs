@@ -29,7 +29,7 @@ namespace MoviesRental.API.Controllers
         }
 
         [HttpGet("{IdFilm}")]
-        public IEnumerable<Actor> GetALLByFilmId(int IdFilm) {
+        public IEnumerable<Actor> GetAllByFilmId(int IdFilm) {
             return _service.GetAllByFilmId(IdFilm);
         }
 
@@ -39,5 +39,12 @@ namespace MoviesRental.API.Controllers
         {
             return _service.GetAllInitials();
         }
+
+        [HttpGet("Initials/{initials}")]
+        public IEnumerable<Actor> GetAllByInitials(string initials)
+        {
+            return _service.GetAllByInitials(initials);
+        }
+
     }
 }
