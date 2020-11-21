@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MoviesRental.DAL.Models;
 using MoviesRental.DAL.Services;
+using System;
 using System.Collections.Generic;
 
 namespace MoviesRental.API.Controllers
@@ -42,8 +43,9 @@ namespace MoviesRental.API.Controllers
 
         [HttpGet("Initials/{initials}")]
         public IEnumerable<Actor> GetAllByInitials(string initials)
-        {
-            return _service.GetAllByInitials(initials);
+        { 
+             initials = initials.ToUpper();
+            return _service.GetAllByInitials(initials[0], initials[1]);
         }
 
     }

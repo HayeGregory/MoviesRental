@@ -36,11 +36,14 @@ namespace MoviesRental.DAL.Services
             return connection.ExecuteReader<ActorInitials>(cmd, ConverterInitials);
         }
 
-        public IEnumerable<Actor> GetAllByInitials(string initials)
+        public IEnumerable<Actor> GetAllByInitials(char IFN, char ILN)
         {
+            
             Command cmd = new Command("GetAllActorByInitials", true);
-            cmd.AddParameter("initials", initials);
+            cmd.AddParameter("initialsFN", IFN);
+            cmd.AddParameter("initialsLN", ILN);
             return connection.ExecuteReader<Actor>(cmd, Converter);
+
         }
 
 
