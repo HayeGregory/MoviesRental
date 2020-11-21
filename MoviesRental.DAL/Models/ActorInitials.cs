@@ -18,7 +18,7 @@ namespace MoviesRental.DAL.Models
             Initials = InitialsActor();
         }
 
-        public ActorInitials(int id, char initialFirstName, char initialLastName)
+        internal ActorInitials(int id, char initialFirstName, char initialLastName)
             : this(initialFirstName, initialLastName)
         {
             Id = id;

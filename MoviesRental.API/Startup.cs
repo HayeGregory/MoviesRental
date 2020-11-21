@@ -38,6 +38,7 @@ namespace MoviesRental.API
             // Singelton service MovieRentals
             services.AddSingleton((sp) => new Connection(@"Data Source=DESKTOP-RQPUUKM;Initial Catalog=MoviesRental;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
             services.AddSingleton<ActorService>();
+            services.AddSingleton<CategoryService>();
 
 
         }
