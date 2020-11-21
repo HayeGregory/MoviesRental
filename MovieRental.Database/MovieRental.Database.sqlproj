@@ -61,6 +61,10 @@
     <Folder Include="Functions" />
     <Folder Include="Procedures" />
     <Folder Include="Views" />
+    <Folder Include="Procedures\Actor" />
+    <Folder Include="Procedures\Category" />
+    <Folder Include="Procedures\Rental" />
+    <Folder Include="Procedures\Film" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Film.sql" />
@@ -78,9 +82,15 @@
     <Build Include="Procedures\MVSP_CheckCustomer.sql" />
     <Build Include="Procedures\MVSP_RegisterCustomer.sql" />
     <Build Include="Views\V_Film.sql" />
+    <Build Include="Functions\DatabaseScalarInitialActor.sql" />
+    <Build Include="Procedures\Actor\GetAllActor.sql" />
+    <Build Include="Procedures\Actor\GetAllActorByInitials.sql" />
+    <Build Include="Procedures\Actor\GetAllActorByFilmId.sql" />
+    <Build Include="Procedures\Category\GetAllCategory.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MovieRental.Database.publish.xml" />
+    <None Include="Scripts\WorkScript.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="MovieRental.Database.refactorlog" />
