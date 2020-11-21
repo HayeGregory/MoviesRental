@@ -101,3 +101,6 @@ SELECT [FilmId]
 
 
 exec [dbo].[GetAllActorByInitials('DT')]
+
+select count(*) from Film WHERE LanguageId=2 
+
