@@ -51,5 +51,12 @@ namespace MoviesRental.API.Controllers
         public IEnumerable<FilmShort> GetAllFSByCatId(int CategorieId) {
             return _service.GetAllFSByCategoryId(CategorieId);
         }
+
+        [HttpGet("Title/{Title}")]
+        public IEnumerable<FilmShort> GetAllFSByTitle(string Title)
+        {
+            return _service.getAllFSByTitle(Title);
+        }
+
     }
 }

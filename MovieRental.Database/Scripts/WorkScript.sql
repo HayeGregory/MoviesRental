@@ -105,4 +105,16 @@ exec [dbo].[GetAllActorByInitials('DT')]
 select count(*) from Film WHERE LanguageId=2 
 
 
+SELECT F.FilmId, F.Title, F.ReleaseYear FROM FilmCategory FC
+inner JOIN Film F ON FC.FilmId = F.FilmId
+inner JOIN Category C ON FC.CategoryId = C.CategoryId
+WHERE C.CategoryId = 1
 
+
+set varchar Titlee
+set @Titlee = 'DIVINE'
+	SELECT Title, [Description], ReleaseYear, RentalPrice, [Length] 
+	FROM Film 
+	WHERE Title like '%'+'DIVINE'+'%'
+
+exec [dbo].[GetAllFSByTitle]('DIVINE')
