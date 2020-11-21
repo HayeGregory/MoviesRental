@@ -70,10 +70,10 @@ inner JOIN Actor on FilmActor.ActorId = Actor.ActorId
 WHERE FirstName = 'DAN' AND LastName = 'TORN'
 
 
-SELECT * FROM FilmCategory
-inner JOIN Film ON FilmCategory.FilmId = Film.FilmId
-inner JOIN Category ON FilmCategory.CategoryId = Category.CategoryId
-WHERE [Name] = 'Action'
+SELECT F.FilmId, F.Title, F.ReleaseYear FROM FilmCategory FC
+inner JOIN Film F ON FC.FilmId = F.FilmId
+inner JOIN Category C ON FC.CategoryId = C.CategoryId
+WHERE C.CategoryId = 1
 
 INSERT INTO Rental (CustomerId) OUTPUT inserted.RentalId VAlUES (@CustomerId)
 INSERT INTO RentalDetail (FilmId, RentalPrice) OUTPUT inserted.RentalId VALUES (@FilmId, @RentalPrice)
@@ -103,4 +103,6 @@ SELECT [FilmId]
 exec [dbo].[GetAllActorByInitials('DT')]
 
 select count(*) from Film WHERE LanguageId=2 
+
+
 

@@ -38,6 +38,12 @@ namespace MoviesRental.DAL.Services
             return connection.ExecuteReader<FilmFull>(cmd, ConverterFull);
         }
 
+        public IEnumerable<FilmShort> GetAllFSByCategoryId(int key) {
+            Command cmd = new Command("GelAllFSByCategoryId", true);
+            cmd.AddParameter("categoryId", key);
+            return connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
+        }
+
         /* 
          * Converters :
          * - Film

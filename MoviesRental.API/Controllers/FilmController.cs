@@ -25,6 +25,7 @@ namespace MoviesRental.API.Controllers
          * - Get all
          * - Get all films Short Info
          * - get all Films Full Info
+         * - get all films by categorie id
          */
         //todo : get by words
 
@@ -44,6 +45,11 @@ namespace MoviesRental.API.Controllers
         public IEnumerable<FilmFull> GetAllFull()
         {
             return _service.GetAllFilmFull();
+        }
+
+        [HttpGet("Category/{CategorieId}")]
+        public IEnumerable<FilmShort> GetAllFSByCatId(int CategorieId) {
+            return _service.GetAllFSByCategoryId(CategorieId);
         }
     }
 }
