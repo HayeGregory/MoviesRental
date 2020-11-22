@@ -22,18 +22,18 @@ namespace MoviesRental.DAL.Services
         public override IEnumerable<Actor> GetAll()
         {
             Command cmd = new Command("GetAllActor", true);
-            return connection.ExecuteReader<Actor>(cmd, Converter);
+            return Connection.ExecuteReader<Actor>(cmd, Converter);
         }
 
         public IEnumerable<Actor> GetAllByFilmId(int key) {
             Command cmd = new Command("GetAllActorByFilmId", true);
             cmd.AddParameter("IdFilm", key);
-            return connection.ExecuteReader<Actor>(cmd, Converter);
+            return Connection.ExecuteReader<Actor>(cmd, Converter);
         }
 
         public IEnumerable<ActorInitials> GetAllInitials() {
             Command cmd = new Command("GetAllActorInitials", true);
-            return connection.ExecuteReader<ActorInitials>(cmd, ConverterInitials);
+            return Connection.ExecuteReader<ActorInitials>(cmd, ConverterInitials);
         }
 
         public IEnumerable<Actor> GetAllByInitials(char IFN, char ILN)
@@ -42,7 +42,7 @@ namespace MoviesRental.DAL.Services
             Command cmd = new Command("GetAllActorByInitials", true);
             cmd.AddParameter("initialsFN", IFN);
             cmd.AddParameter("initialsLN", ILN);
-            return connection.ExecuteReader<Actor>(cmd, Converter);
+            return Connection.ExecuteReader<Actor>(cmd, Converter);
 
         }
 

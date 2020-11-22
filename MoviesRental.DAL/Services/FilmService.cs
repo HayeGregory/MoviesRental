@@ -26,40 +26,40 @@ namespace MoviesRental.DAL.Services
         public override IEnumerable<Film> GetAll()
         {
             Command cmd = new Command("GetAllFilm");
-            return connection.ExecuteReader<Film>(cmd, Converter);
+            return Connection.ExecuteReader<Film>(cmd, Converter);
         }
         public IEnumerable<FilmShort> GetAllFilmShort()
         {
             Command cmd = new Command("GetAllFilmShort");
-            return connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
+            return Connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
         }
         public IEnumerable<FilmFull> GetAllFilmFull()
         {
             Command cmd = new Command("GetAllFilmFull");
-            return connection.ExecuteReader<FilmFull>(cmd, ConverterFull);
+            return Connection.ExecuteReader<FilmFull>(cmd, ConverterFull);
         }
 
         public IEnumerable<FilmShort> GetAllFSByCategoryId(int key) {
             Command cmd = new Command("GelAllFSByCategoryId", true);
             cmd.AddParameter("categoryId", key);
-            return connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
+            return Connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
         }
 
         public IEnumerable<FilmShort> GetAllFSByTitle(string title) {
             Command cmd = new Command("GetAllFSByTitle", true);
             cmd.AddParameter("Title", title);
-            return connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
+            return Connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
         }
         public IEnumerable<FilmShort> GetAllFSByLanguageId(int key)
         {
             Command cmd = new Command("GetAllFSByLanguageId", true);
             cmd.AddParameter("LanguageId", key);
-            return connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
+            return Connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
         }
         public FilmFull GetFilmById(int key) {
             Command cmd = new Command("GetFilmById", true);
             cmd.AddParameter("Id", key);
-            return connection.ExecuteReader<FilmFull>(cmd, ConverterFull).FirstOrDefault();
+            return Connection.ExecuteReader<FilmFull>(cmd, ConverterFull).FirstOrDefault();
         }
 
         /* 

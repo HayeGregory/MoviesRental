@@ -16,7 +16,7 @@ namespace MoviesRental.DAL.Services
         public override IEnumerable<Category> GetAll()
         {
             Command cmd = new Command("GetAllCategory", true);
-            return connection.ExecuteReader<Category>(cmd, Converter);
+            return Connection.ExecuteReader<Category>(cmd, Converter);
         }
 
         private Category Converter(SqlDataReader reader)

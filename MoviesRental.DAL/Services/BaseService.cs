@@ -8,11 +8,11 @@ namespace MoviesRental.DAL.Services
     public abstract class BaseService<TKey, TEntity> : IService<TKey, TEntity>
         where TEntity : IEntity<TKey>
     {
-        protected Connection connection { get; private set; }
+        protected Connection Connection { get; private set; }
 
         protected BaseService(Connection connection)
         {
-            this.connection = connection;
+            Connection = connection;
         }
 
         // --> etablir la connection dans le startup.cs de la webapi afin de beneficier du service Locator (IOC + singelton)

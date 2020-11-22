@@ -12,5 +12,8 @@ namespace MoviesRental.DAL.Services
         IEnumerable<TEntity> GetAll();
         //bool Update(TEntity entity);
         //bool Delete(TKey key);
+
+
+        // todo : faire les flux update, get, delete, insert
     }
 }
