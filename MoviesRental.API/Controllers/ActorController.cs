@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MoviesRental.API.Infrastructure;
 using MoviesRental.DAL.Models;
 using MoviesRental.DAL.Services;
 using System;
@@ -10,6 +11,7 @@ namespace MoviesRental.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AuthRequired]
     public class ActorController : ControllerBase
     {
         private readonly ActorService _service;
