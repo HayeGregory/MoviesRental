@@ -40,7 +40,7 @@ namespace MoviesRental.API
             services.AddSingleton<ActorService>();
             services.AddSingleton<CategoryService>();
             services.AddSingleton<FilmService>();
-
+            services.AddSingleton<AuthCustomerService>();
 
         }
 
