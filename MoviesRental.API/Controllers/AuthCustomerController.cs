@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MoviesRental.API.Infrastructure;
 using MoviesRental.DAL.Models;
 using MoviesRental.DAL.Services;
 using System;
@@ -14,10 +15,12 @@ namespace MoviesRental.API.Controllers
     public class AuthCustomerController : ControllerBase
     {
         private readonly AuthCustomerService _service;
+        private readonly TokenService _tokenService;
 
-        public AuthCustomerController(AuthCustomerService service)
+        public AuthCustomerController(AuthCustomerService service, TokenService tokenService )
         {
             _service = service;
+            _tokenService = tokenService;
         }
 
         [HttpPost]
@@ -32,7 +35,15 @@ namespace MoviesRental.API.Controllers
         [Route("Login")]
         public IActionResult Login([FromBody] Customer customer)
         {
-            return Ok(_service.Login(customer));
+            customer = _service.Login(customer);
+            if (customer is null)
+            {
+                return Unauthorized();
+            }
+            
+            // si on a bien un user en retour ( autorisé, on lui genere un token
+            customer.Token = _tokenService.GenerateToken(customer);
+            return Ok(customer);
         }
     }
 }

@@ -12,8 +12,8 @@ namespace MoviesRental.DAL.Models
         public string Email { get; set; }
         public string Passwd { get; set; }
 
-        // token
-        //public string Token { get; set; }
+        // token : on rajoute pas dans le converter
+        public string Token { get; set; }
 
     }
 }

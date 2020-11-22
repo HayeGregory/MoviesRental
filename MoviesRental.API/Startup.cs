@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MoviesRental.API.Infrastructure;
 using MoviesRental.DAL.Services;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,7 @@ namespace MoviesRental.API
             services.AddSingleton<CategoryService>();
             services.AddSingleton<FilmService>();
             services.AddSingleton<AuthCustomerService>();
+            services.AddSingleton<TokenService>();
 
         }
 
