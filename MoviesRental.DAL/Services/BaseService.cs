@@ -15,10 +15,11 @@ namespace MoviesRental.DAL.Services
             this.connection = connection;
         }
 
-        protected BaseService()
-        {
-            this.connection = new Connection(@"Data Source=DESKTOP-RQPUUKM;Initial Catalog=MoviesRental;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-        }
+        // --> etablir la connection dans le startup.cs de la webapi afin de beneficier du service Locator (IOC + singelton)
+        //protected BaseService()
+        //{
+        //    this.connection = new Connection(@"Data Source=DESKTOP-RQPUUKM;Initial Catalog=MoviesRental;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        //}
 
         public abstract IEnumerable<TEntity> GetAll();
     }
