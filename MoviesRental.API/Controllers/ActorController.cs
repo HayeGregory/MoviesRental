@@ -11,7 +11,7 @@ namespace MoviesRental.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [AuthRequired]
+    //[AuthRequired]
     public class ActorController : ControllerBase
     {
         private readonly ActorService _service;
@@ -23,13 +23,16 @@ namespace MoviesRental.API.Controllers
             _logger = logger;
         }
 
+
         /*
          * Get :
          * - Get all
-         * - Get all actor by film id
          * - get all initials of actor
+         * - Get all actors by initial
+         * - Get all actor by film id
          */
 
+        /*=======================================================================================================*/
         //[HttpGet]
         //public IEnumerable<Actor> GetAll()
         //{
@@ -44,7 +47,7 @@ namespace MoviesRental.API.Controllers
         [HttpGet]
         public IActionResult GetAll() {
             try {
-                _logger.LogInformation("Get all du controlleur Actor appelé...");
+                _logger.LogInformation("### Controller Actor : Get all Actors called ...");
                 // ne pas lancer directement le service.getall() 
                 // dans le OK --> yield return , il faut consommer avec le ToList() pour declencher l'erreur ici
                 IEnumerable<Actor> actors = _service.GetAll().ToList();
@@ -55,14 +58,8 @@ namespace MoviesRental.API.Controllers
                 return BadRequest();
             }
         }
-        /*=====================================================================================================================*/
 
-
-        [HttpGet("{IdFilm}")]
-        public IEnumerable<Actor> GetAllByFilmId(int IdFilm) {
-            return _service.GetAllByFilmId(IdFilm);
-        }
-
+        /*=======================================================================================================*/
         [HttpGet]
         [Route("Initials")]
         public IEnumerable<ActorInitials> GetAllInitials()
@@ -70,12 +67,34 @@ namespace MoviesRental.API.Controllers
             return _service.GetAllInitials();
         }
 
-        [HttpGet("Initials/{initials}")]
-        public IEnumerable<Actor> GetAllByInitials(string initials)
-        { 
-             initials = initials.ToUpper();
-            return _service.GetAllByInitials(initials[0], initials[1]);
+        /*=======================================================================================================*/
+        [HttpGet("ByInitials/{initialFN}")]
+        public IActionResult GetAllByInitial(char initialFN)
+        {
+            try
+            {
+                _logger.LogInformation("### Controller Actor : Get all Actors by Initial called ...");
+                IEnumerable<Actor> actors = _service.GetAllByInitial(initialFN).ToList();
+                return Ok(actors);
+            }
+            catch (Exception ex) {
+                _logger.LogError(ex.Message);
+                return BadRequest();
+            }
         }
 
+        /*=======================================================================================================*/
+        [HttpGet("ByFilms/{IdFilm}")]
+        public IActionResult GetAllByFilmId(int IdFilm) {
+            try {
+                _logger.LogInformation("### Controller Actor : Get all Actors by Film called ...");
+                IEnumerable<Actor> actors = _service.GetAllByFilmId(IdFilm).ToList();
+                return Ok(actors);
+            } 
+            catch (Exception ex) {
+                _logger.LogError(ex.Message);
+                return BadRequest();
+            }
+        }
     }
 }

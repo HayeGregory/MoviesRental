@@ -36,18 +36,13 @@ namespace MoviesRental.DAL.Services
             return Connection.ExecuteReader<ActorInitials>(cmd, ConverterInitials);
         }
 
-        public IEnumerable<Actor> GetAllByInitials(char IFN, char ILN)
+        public IEnumerable<Actor> GetAllByInitial(char IFN)
         {
-            
-            Command cmd = new Command("GetAllActorByInitials", true);
-            cmd.AddParameter("initialsFN", IFN);
-            cmd.AddParameter("initialsLN", ILN);
+            Command cmd = new Command("GetAllActorByInitial", true);
+            cmd.AddParameter("initialFN", IFN);
             return Connection.ExecuteReader<Actor>(cmd, Converter);
 
         }
-
-
-
 
         /* 
          * Converters :
@@ -66,9 +61,7 @@ namespace MoviesRental.DAL.Services
         private ActorInitials ConverterInitials(SqlDataReader reader)
         {
             return new ActorInitials(
-                (int)reader["ActorId"],
-                Char.Parse(reader["InitialFirstName"].ToString()),
-                Char.Parse(reader["InitialLastName"].ToString())
+                Char.Parse(reader["InitialFirstName"].ToString())
             );
         }
 

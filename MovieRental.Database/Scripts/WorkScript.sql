@@ -130,3 +130,19 @@ exec [dbo].[GetAllFSByTitle('DIVINE')]
 
 
 		SELECT * from V_Film where FilmId = 4
+
+
+
+
+	SELECT distinct 
+		left(FirstName, 1) as InitialFirstName
+	FROM Actor A
+
+
+
+	select * from actor
+	where left(FirstName,1) ='M'
+
+
+
+

@@ -2,9 +2,7 @@
 
 AS
 BEGIN
-	SELECT 
-		ActorId, 
-		left(FirstName, 1) as InitialFirstName, 
-		left(LastName, 1) as InitialLastName
+	SELECT distinct 
+		left(FirstName, 1) as InitialFirstName
 	FROM Actor A
 END
