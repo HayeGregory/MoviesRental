@@ -162,5 +162,3 @@ SELECT [FilmId]
   JOIN [Rating] AS [R] ON [F].[RatingId] = [R].[RatingId]
   JOIN [Language] AS [L] ON [F].[LanguageId] = [L].[LanguageId]
 
-
-  je compte les petales des roses
