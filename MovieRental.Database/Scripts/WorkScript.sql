@@ -143,6 +143,24 @@ exec [dbo].[GetAllFSByTitle('DIVINE')]
 	select * from actor
 	where left(FirstName,1) ='M'
 
+	select * from film
+	select * from Language
+	select * from V_Film
+SELECT [FilmId]
+      ,[Title]
+      ,[Description]
+      ,[ReleaseYear]
+      ,[F].[LanguageId]
+	  ,[L].[Name]
+      ,[RentalDuration]
+      ,[RentalPrice]
+      ,[Length]
+      ,[ReplacementCost]
+	  ,[F].[RatingId]
+      ,[Rating]
+  FROM [Film] AS [F]
+  JOIN [Rating] AS [R] ON [F].[RatingId] = [R].[RatingId]
+  JOIN [Language] AS [L] ON [F].[LanguageId] = [L].[LanguageId]
 
 
-
+  je compte les petales des roses
