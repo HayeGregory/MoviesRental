@@ -188,7 +188,7 @@ order by (A.FirstName)
 
 
 
-select *  from Film where Title like '%story' or Description like '%story%'
+select *  from Film where Title like '%story%' or [Description] like '%story%'
 
 
 

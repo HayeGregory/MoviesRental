@@ -48,18 +48,18 @@ namespace MoviesRental.API.Controllers
             return _service.GetAllFilmFull();
         }
 
-        [HttpGet("Category/{CategorieId}")]
+        [HttpGet("ByCategory/{CategorieId}")]
         public IEnumerable<FilmShort> GetAllFSByCatId(int CategorieId) {
             return _service.GetAllFSByCategoryId(CategorieId);
         }
 
-        [HttpGet("Title/{Title}")]
+        [HttpGet("ByTitle/{Title}")]
         public IEnumerable<FilmShort> GetAllFSByTitle(string Title)
         {
             return _service.GetAllFSByTitle(Title);
         }
 
-        [HttpGet("Langue/{LanguageId}")]
+        [HttpGet("ByLangue/{LanguageId}")]
         public IEnumerable<FilmShort> GetAllFSByLanguageId(int LanguageId)
         {
             return _service.GetAllFSByLanguageId(LanguageId);
@@ -68,6 +68,11 @@ namespace MoviesRental.API.Controllers
         [HttpGet("ByActor/{ActorId}")]
         public IEnumerable<FilmShort> GetAllFSByActorId(int ActorId) {
             return _service.GetAllFSByActorId(ActorId);
+        }
+
+        [HttpGet("ByKeyWords/{keyword}")]
+        public IEnumerable<FilmShort> GetAllFSByKeyWords(string keyword) {
+            return _service.GetAllFSByKeyWords(keyword);
         }
 
         [HttpGet("{Id}")]

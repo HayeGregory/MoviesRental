@@ -64,6 +64,11 @@ namespace MoviesRental.DAL.Services
             return Connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
         }
 
+        public IEnumerable<FilmShort> GetAllFSByKeyWords(string keyword) {
+            Command cmd = new Command("GetAllFSByKeyWords", true);
+            cmd.AddParameter("KeyWords", keyword);
+            return Connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
+        }
 
         public FilmFull GetFilmById(int key) {
             Command cmd = new Command("GetFilmById", true);
