@@ -20,6 +20,7 @@ namespace MoviesRental.DAL.Services
          * - Get all by categorie id
          * - Get all by title
          * - Get all by langue id
+         * - Get all by Actor id
          * - Get all by words
          */
         //todo : by words
@@ -56,6 +57,14 @@ namespace MoviesRental.DAL.Services
             cmd.AddParameter("LanguageId", key);
             return Connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
         }
+
+        public IEnumerable<FilmShort> GetAllFSByActorId(int key) {
+            Command cmd = new Command("GetAllFSFilmByActorId",true);
+            cmd.AddParameter("ActorId", key);
+            return Connection.ExecuteReader<FilmShort>(cmd, ConverterShort);
+        }
+
+
         public FilmFull GetFilmById(int key) {
             Command cmd = new Command("GetFilmById", true);
             cmd.AddParameter("FilmId", key);

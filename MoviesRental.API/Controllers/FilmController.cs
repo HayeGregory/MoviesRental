@@ -26,6 +26,7 @@ namespace MoviesRental.API.Controllers
          * - Get all films Short Info
          * - get all Films Full Info
          * - get all films by categorie id
+         * - get all films by actor id
          */
         //todo : get by words
 
@@ -62,6 +63,11 @@ namespace MoviesRental.API.Controllers
         public IEnumerable<FilmShort> GetAllFSByLanguageId(int LanguageId)
         {
             return _service.GetAllFSByLanguageId(LanguageId);
+        }
+
+        [HttpGet("ByActor/{ActorId}")]
+        public IEnumerable<FilmShort> GetAllFSByActorId(int ActorId) {
+            return _service.GetAllFSByActorId(ActorId);
         }
 
         [HttpGet("{Id}")]

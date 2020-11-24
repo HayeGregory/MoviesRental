@@ -185,7 +185,7 @@ where C.Name = 'Horror'
 order by (A.FirstName)
 
 
-declare tet  varchar(max);
+
 
 
 select *  from Film where Title like '%story' or Description like '%story%'
@@ -202,8 +202,13 @@ inner join [Language] L on (F.LanguageId = L.LanguageId)
 inner join [Rating] R on(F.RatingId = R.RatingId)
 
 
+select * from film where FilmId = 25
 
 
+
+select F.FilmId, F.Title, F.ReleaseYear from FilmActor FA
+inner join Film F on (F.FilmId = FA.FilmId)
+where FA.ActorId = 1
 
 
 
