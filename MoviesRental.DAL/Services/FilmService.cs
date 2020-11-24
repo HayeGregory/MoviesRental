@@ -58,7 +58,7 @@ namespace MoviesRental.DAL.Services
         }
         public FilmFull GetFilmById(int key) {
             Command cmd = new Command("GetFilmById", true);
-            cmd.AddParameter("Id", key);
+            cmd.AddParameter("FilmId", key);
             return Connection.ExecuteReader<FilmFull>(cmd, ConverterFull).FirstOrDefault();
         }
 

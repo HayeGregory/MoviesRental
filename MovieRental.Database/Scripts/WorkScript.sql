@@ -162,3 +162,51 @@ SELECT [FilmId]
   JOIN [Rating] AS [R] ON [F].[RatingId] = [R].[RatingId]
   JOIN [Language] AS [L] ON [F].[LanguageId] = [L].[LanguageId]
 
+
+
+select * from Category
+
+select * from Film F
+inner join FilmActor FA on (FA.FilmId = F.FilmId)
+inner join FilmCategory FC on (FC.FilmId = F.FilmId)
+where ActorId=1 and Fc.CategoryId=10
+
+select A.FirstName, A.LastName from Film F
+inner join FilmActor FA on (F.FilmId = FA.FilmId)
+inner join Actor A on (FA.ActorId = A.ActorId)
+where F.Title = 'ELEPHANT TROJAN'
+
+select distinct A.ActorId, A.FirstName, A.LastName from Film F 
+inner join FilmCategory FC on ( F.FilmId = FC.FilmId )
+inner join Category C on (FC.CategoryId = C.CategoryId)
+inner join FilmActor FA on (FA.FilmId = F.FilmId)
+inner join Actor A on (A.ActorId = FA.ActorId)
+where C.Name = 'Horror'
+order by (A.FirstName)
+
+
+declare tet  varchar(max);
+
+
+select *  from Film where Title like '%story' or Description like '%story%'
+
+
+
+
+select * from V_Film where FilmId = 44
+select * from film where FilmId = 44
+select * from Language
+
+select * from [Film] F
+inner join [Language] L on (F.LanguageId = L.LanguageId)
+inner join [Rating] R on(F.RatingId = R.RatingId)
+
+
+
+
+
+
+
+
+
+
