@@ -7715,3 +7715,6 @@ INSERT INTO [FilmActor] ([ActorId], [FilmId]) VALUES (142, 999);
 INSERT INTO [FilmActor] ([ActorId], [FilmId]) VALUES (155, 1000);
 INSERT INTO [FilmActor] ([ActorId], [FilmId]) VALUES (166, 1000);
 INSERT INTO [FilmActor] ([ActorId], [FilmId]) VALUES (178, 1000);
+
+INSERT INTO [Customer] (LastName, FirstName, Email, Passwd) 
+    VALUES ('Haye', 'Greg', 'Haye@Greg.be', HASHBYTES('SHA2_512', dbo.MVSF_GetPreHash() + 'GHA' + dbo.MVSF_GetPostHash()));

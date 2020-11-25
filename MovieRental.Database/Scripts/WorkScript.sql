@@ -211,7 +211,7 @@ inner join Film F on (F.FilmId = FA.FilmId)
 where FA.ActorId = 1
 
 select * from Rental
-select * from Customer
+select * from Customer where CustomerId =  1
 insert into Rental (CustomerId) values (1)
 
 
