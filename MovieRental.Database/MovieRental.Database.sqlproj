@@ -96,6 +96,8 @@
     <Build Include="Procedures\Film\GetFilmById.sql" />
     <Build Include="Procedures\Film\GetAllFSFilmByActorId.sql" />
     <Build Include="Procedures\Film\GetAllFSByKeyWords.sql" />
+    <Build Include="Procedures\Rental\FilmIds.sql" />
+    <Build Include="Procedures\Rental\AddRental.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\WorkScript.sql" />

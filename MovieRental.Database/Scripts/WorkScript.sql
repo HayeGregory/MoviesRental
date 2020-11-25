@@ -210,8 +210,9 @@ select F.FilmId, F.Title, F.ReleaseYear from FilmActor FA
 inner join Film F on (F.FilmId = FA.FilmId)
 where FA.ActorId = 1
 
-
-
+select * from Rental
+select * from Customer
+insert into Rental (CustomerId) values (1)
 
 
 
