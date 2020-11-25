@@ -12,8 +12,8 @@ AS Begin
 
 	/* insertion des films dans le panier créé, sur base des id passé en param */
 	insert into [RentalDetail] ([RentalId], [FilmId], [RentalPrice])
-		select @RentalId, FI.[FilmId], F.[RentalPrice] 
+		select @RentalId, FI.[Id], F.[RentalPrice] 
 		from Film F
-		inner join @FilmsId FI on ( F.[FilmId] = FI.[Id])
+		join @FilmsId FI on ( F.[FilmId] = FI.[Id])
 
 end
