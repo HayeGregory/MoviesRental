@@ -41,6 +41,7 @@ namespace MoviesRental.API
             services.AddSingleton<ActorService>();
             services.AddSingleton<CategoryService>();
             services.AddSingleton<FilmService>();
+            services.AddSingleton<RentalService>();
             services.AddSingleton<AuthCustomerService>();
             services.AddSingleton<TokenService>();
 
